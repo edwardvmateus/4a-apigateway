@@ -13,6 +13,16 @@ class AccountAPI extends RESTDataSource{
         return await  this.get(`/usuario/usuario/${id}`)
         
     }
+
+    async accountAll(){
+        return await  this.get("/usuario/usuario/")
+        
+    }
+
+     async authRequest(credentials){
+       return await this.post(`/rest-auth/login/`,credentials);
+    }
+    
 }
 
 module.exports = AccountAPI;

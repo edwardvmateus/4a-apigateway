@@ -16,8 +16,23 @@ const  accountTypeDef = gql`
 
     type Query {
         accountById(id: Int!): Account
-
+        accountAll: [Account]
     }
+
+    input LoginInput {
+        username: String!
+        password: String!
+    }
+
+    type Token {
+        key: String!
+    }
+
+    type Mutation{
+        logIn(credentials: LoginInput!): Token!
+    }
+
+    
 
 
 `;
