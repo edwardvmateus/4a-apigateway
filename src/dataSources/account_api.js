@@ -22,6 +22,18 @@ class AccountAPI extends RESTDataSource{
      async authRequest(credentials){
        return await this.post(`/rest-auth/login/`,credentials);
     }
+
+    async userRegister(credentials){
+        return await this.post(`rest-auth/registration/`,credentials);
+    }
+
+    async deleteUserById(id){
+        return await this.delete(`/usuario/usuario/${id}/`);
+    }
+
+    async UpdateUser(id,credentials){
+        return await this.put(`/usuario/usuario/${id}/`,credentials);
+    }
     
 }
 

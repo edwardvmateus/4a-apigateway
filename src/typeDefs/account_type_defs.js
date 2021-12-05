@@ -13,6 +13,19 @@ const  accountTypeDef = gql`
         gender: String
 
     }
+    type  Account2 {
+        id: Int!
+        username: String!
+        email: String!
+        first_name: String!
+        last_name: String!
+        is_active: Boolean
+        phone_number: String!
+        last_login: String
+        gender: String
+        password: String!
+
+    }
 
     type Query {
         accountById(id: Int!): Account
@@ -23,13 +36,45 @@ const  accountTypeDef = gql`
         username: String!
         password: String!
     }
+    input RegisterUserInput{
+         username: String!
+        first_name: String!
+        last_name: String!
+        gender: String!
+        phone_number: String!
+        email: String!
+        password1: String!
+        password2: String!
+    }
+    
+    input UpdateUserInput{
+        username: String!
+        email: String!
+        first_name: String!
+        last_name: String!
+        is_active: Boolean
+        phone_number: String!
+        last_login: String
+        gender: String
+        password: String!
+    }
 
     type Token {
         key: String!
     }
+     
+    type Message {
+        Message: String
+    }
+
+    
 
     type Mutation{
         logIn(credentials: LoginInput!): Token!
+        Register(credentials: RegisterUserInput!): Token!
+        DeleteUser(id: Int!): Message
+        UpdateUser(id: Int! , credentials:UpdateUserInput!):Account2!
+
     }
 
     
