@@ -1,7 +1,8 @@
 const accountResolver = {
     Query:{
-        accountById: async (_, {id} ,  {dataSources, userIdToken}) => {
-            if(id == userIdToken){
+        accountById: async (_, {id} , {dataSources, userIdToken}) => {
+            if(id == userIdToken.id){
+                
                 return await dataSources.accountAPI.accountById(id);
             }else{
                 return null
@@ -12,7 +13,13 @@ const accountResolver = {
             return await dataSources.accountAPI.accountAll();
         },
 
+        getUserByToken: async  (_, __, {dataSources})=>{  
+            
+            return await  dataSources.accountAPI.UserToken();              
+        }
         
+
+
     },
 
     Mutation:{

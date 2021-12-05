@@ -27,9 +27,18 @@ const  accountTypeDef = gql`
 
     }
 
+    type Account3{
+        id: Int!,
+        username: String!
+        first_name: String!
+        last_name: String!
+        last_login: String!
+    }
+
     type Query {
         accountById(id: Int!): Account
         accountAll: [Account]
+        getUserByToken: Account3!
     }
 
     input LoginInput {
@@ -74,6 +83,7 @@ const  accountTypeDef = gql`
         Register(credentials: RegisterUserInput!): Token!
         DeleteUser(id: Int!): Message
         UpdateUser(id: Int! , credentials:UpdateUserInput!):Account2!
+
 
     }
 

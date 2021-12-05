@@ -34,6 +34,10 @@ class AccountAPI extends RESTDataSource{
     async UpdateUser(id,credentials){
         return await this.put(`/usuario/usuario/${id}/`,credentials);
     }
+
+    async UserToken(){
+        return await this.get(`/usuario/user/`);
+    }
     
 }
 

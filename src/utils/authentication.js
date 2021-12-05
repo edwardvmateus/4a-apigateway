@@ -10,6 +10,7 @@ const authentication = async ({ req }) => {
     return { userIdToken: null };
     
 }else {
+  
     try {
       let requestOptions = {
         method: "GET",
@@ -29,7 +30,7 @@ const authentication = async ({ req }) => {
         console.log(response);
         throw new ApolloError(`SESION INACTIVA - ${401}` + response.status,401);
       }else{
-        return { userIdToken: (await response.json()).id };
+        return { userIdToken: (await response.json()) };
       }
 
     } 
