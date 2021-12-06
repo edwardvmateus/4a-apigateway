@@ -13,7 +13,31 @@ const productTypeDef = gql`
         date: String        
     }
 
+    type updatedProduct{
+        productId: Int!
+        productName: String!
+        productDescription: String!
+        isProductInStock: Boolean
+        sellerId: Int!
+        sellerName: String!
+        quantity: Int!
+        adminId: Int
+        date: String  
+    }
+
     input newProductInput {
+        productId: Int!
+        productName: String!
+        productDescription: String!
+        isProductInStock: Boolean
+        sellerId: Int!
+        sellerName: String!
+        quantity: Int!
+        adminId: Int
+        date: String  
+    }
+
+    input updateProductInput {
         productId: Int!
         productName: String!
         productDescription: String!
@@ -33,7 +57,7 @@ const productTypeDef = gql`
     type Mutation {
         createProduct(newProduct: newProductInput): Product
         deleteProductByProductId(productId: Int!): Message
-        updateProductByProductId(productId: Int!): Product
+        updateProductByProductId(productId: Int!, updatedProduct: updateProductInput): updatedProduct
     }
 
 `;

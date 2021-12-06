@@ -19,8 +19,8 @@ const productResolver = {
             return await dataSources.productAPI.deleteProductByProductId(productId);
         },
 
-        updateProductByProductId: async (_, {productId}, {dataSources}) =>{
-            return await dataSources.productAPI.updateProductByProductId(productId);
+        updateProductByProductId: async (_, {productId, updatedProduct}, {dataSources}) =>{
+            return await dataSources.productAPI.updateProductByProductId(productId, updatedProduct);
         }
     }
     

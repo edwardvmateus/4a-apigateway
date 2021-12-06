@@ -36,8 +36,7 @@ const accountResolver = {
         },
 
         UpdateUser: async  (_, {id,credentials},{dataSources})=>{
-            return await dataSources.accountAPI.UpdateUser(id,credentials)
-
+            return await dataSources.accountAPI.UpdateUser(id,credentials);
         }
 
 
