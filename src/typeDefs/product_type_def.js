@@ -5,7 +5,7 @@ const productTypeDef = gql`
         productId: Int!
         productName: String!
         productDescription: String!
-        isProductInStock: Boolean!
+        isProductInStock: Boolean
         sellerId: Int!
         sellerName: String!
         quantity: Int!
@@ -17,7 +17,7 @@ const productTypeDef = gql`
         productId: Int!
         productName: String!
         productDescription: String!
-        isProductInStock: Boolean!
+        isProductInStock: Boolean
         sellerId: Int!
         sellerName: String!
         quantity: Int!
