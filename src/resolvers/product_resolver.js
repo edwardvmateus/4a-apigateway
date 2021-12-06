@@ -5,7 +5,7 @@ const productResolver = {
             return await dataSources.productAPI.getAllProducts();
         },
 
-        getProductByProductId: async  (_, productId, {dataSources})=>{              
+        getProductByProductId: async  (_, {productId}, {dataSources})=>{              
             return await  dataSources.productAPI.getProductByProductId(productId);
         }        
     },
