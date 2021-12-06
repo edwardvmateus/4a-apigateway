@@ -1,6 +1,8 @@
 const accountResolver = require('./account_resolver');
+const productResolver = require('./product_resolver');
+
 const lodash = require('lodash');
 
-const resolvers = lodash.merge(accountResolver);
+const resolvers = lodash.merge(accountResolver, productResolver);
 
 module.exports =resolvers;
